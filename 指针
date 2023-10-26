@@ -1,0 +1,7 @@
+指针
+int* p 表示指针变量
+int *p=&a；对a取地址
+a== *p；*p取出地址p里的值，而int*，代表指针变量，名为p
+8位，128个ascii表示一个字符，也就是一个字节
+int* p =(int*)malloc(1024);p代表的是申请到的内存，有效字节数为1024；返回的是内存的首地址
+int* p=(int*)malloc(sizeof(int)*n)；sizeof（int）是一个整型占用的字节数，申请的就是长度为n的int类型的数组
