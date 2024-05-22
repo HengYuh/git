@@ -1,36 +1,32 @@
-# git
-...或在命令行上创建新的存储库
-echo "# some-experience-when-use-git" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/HengYuh/some-experience-when-use-git.git
-git push -u origin main
+# Reproducing YAGO3-10 Dataset
 
+This guide provides instructions on how to reproduce the YAGO3-10 dataset using the provided model and scripts.
 
+## Steps to Reproduce
 
-...或从命令行推送现有存储库
-git remote add origin https://github.com/HengYuh/some-experience-when-use-git.git
-git branch -M main
-git push -u origin main
+### 1. Clone the Dataset
 
+First, clone the dataset repository from the following link:
 
-fatal: unable to access 'https://github.com/LinyangLee/BERT-Attack.git/': Recv failure: Connection was reset
-$ git config --global --unset https.proxy   #may solve this problem
+```bash
+git clone https://github.com/DeepGraphLearning/KnowledgeGraphEmbedding.git
+2. Replace model.py
+Next, replace the model.py file in the cloned repository with the model.py file provided in the supplementary materials.
 
-heng'ge@LAPTOP-NI1B9H83 MINGW64 /d/桌面/github (master)
-$ git clone https://github.com/LinyangLee/BERT-Attack.git
-Cloning into 'BERT-Attack'...
-fatal: unable to access 'https://github.com/LinyangLee/BERT-Attack.git/': Recv failure: Connection was reset
-        heng'ge@LAPTOP-NI1B9H83 MINGW64 /d/桌面/github (master)
-        $ git config --global --unset https.proxy
-        
-        heng'ge@LAPTOP-NI1B9H83 MINGW64 /d/桌面/github (master)
-        $ git clone https://github.com/LinyangLee/BERT-Attack.git
-        Cloning into 'BERT-Attack'...
-        remote: Enumerating objects: 9, done.
-        remote: Counting objects: 100% (9/9), done.
-        remote: Compressing objects: 100% (8/8), done.
-        remote: Total 9 (delta 0), reused 9 (delta 0), pack-reused 0
-        Receiving objects: 100% (9/9), 510.28 KiB | 303.00 KiB/s, done.
+3. Run the Training Script
+To run the training script, use the following command:
+
+bash
+复制代码
+bash run.sh train MODE YAGO3-10 0 0 1024 400 480 24.0 1.0 0.0002 200000 4
+This will start the training process for the MODE model on the YAGO3-10 dataset.
+
+Additional Information
+Ensure you have all the necessary dependencies installed before running the script.
+Refer to the documentation in the original repository for any additional setup or configuration details.
+Happy training!
+
+vbnet
+复制代码
+
+Make sure to replace the placeholders in the instructions with the actual paths or d
