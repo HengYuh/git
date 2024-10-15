@@ -1,0 +1,46 @@
+import matplotlib.pyplot as plt
+from matplotlib import font_manager as fm
+
+# 设置字体路径
+font_path = '/media/ssd/zhc/font-times-new-roman/Times New Roman.ttf'
+
+# 使用 addfont 加载字体
+fm.fontManager.addfont(font_path)
+
+# 设置全局字体为 Times New Roman
+plt.rcParams['font.family'] = 'Times New Roman'
+
+# 将MRR的数值放大100倍，以适应百分比
+MODE_mrr_list=[]
+CompoundE_mrr_list=[]
+PairRE_mrr_list=[]
+ComplEx_mrr_list=[]
+embedding_dimensions = [100, 150, 180, 210, 240, 270, 300]
+plt.figure(figsize=(10, 6))
+
+# 绘制不同模型的 MRR 曲线，使用手动设置的 RGB 颜色
+plt.plot(embedding_dimensions, MODE_mrr_list, color=[0.7216, 0.2235, 0.2706], marker='s', label='RCE', linewidth=2, markersize=8)  # B83945
+plt.plot(embedding_dimensions, CompoundE_mrr_list, color=[0.9765, 0.8353, 0.5020], marker='o', label='compoundE', linewidth=2, markersize=8)  # F9D580
+plt.plot(embedding_dimensions, PairRE_mrr_list, color=[0.6000, 0.7137, 0.9137], marker='^', label='PairRE', linewidth=2, markersize=8)  # 99B6E9
+plt.plot(embedding_dimensions, ComplEx_mrr_list, color=[0.6902, 0.8510, 0.5725], marker='x', label='ComplEx', linewidth=2, markersize=8)  # B0D992
+
+# 设置标题和标签，增大字体大小
+plt.xlabel('Embedding Dimension', fontsize=20, fontweight='bold')  # 增大 x 轴标签字体
+plt.ylabel('MRR (%)', fontsize=20, fontweight='bold')  # 增大 y 轴标签字体，显示百分比
+plt.xticks(embedding_dimensions, fontsize=20, fontweight='bold')  # 增大 x 轴刻度字体
+plt.yticks(fontsize=20, fontweight='bold')  # 增大 y 轴刻度字体
+
+# 设置y轴范围为0-100
+plt.ylim(35, 70)
+
+# 设置图例，缩小边框
+plt.legend(loc='upper left', bbox_to_anchor=(0.65, 0.55), fontsize=20, frameon=True, 
+           edgecolor='black', fancybox=True, shadow=True, borderpad=0.7,  # 减少borderpad以缩小边框
+           prop={'weight': 'bold', 'size': 20})
+
+# 显示网格
+plt.grid(True)
+
+# 保存图片为 PDF 并展示
+plt.savefig('/media/ssd/zhc/zhc/TextAttack/pic2.pdf', format='pdf')
+plt.show()
