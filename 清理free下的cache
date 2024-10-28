@@ -1,0 +1,5 @@
+free -h
+echo 3 | sudo tee /proc/sys/vm/drop_caches
+输入密码
+清理完成输出3
+free -h
