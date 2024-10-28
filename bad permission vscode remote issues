@@ -1,0 +1,118 @@
+just find the vscode config in your computer and delete the irrelvent users,
+C:\Users\heng>ssh 118.230.232.173
+Bad permissions. Try removing permissions for user: UNKNOWN\\UNKNOWN (S-1-5-21-4153787616-4019674959-1063179218-1008) on file C:/Users/heng/.ssh/config.
+Bad owner or permissions on C:\\Users\\heng/.ssh/config
+
+C:\Users\heng>ssh 118.230.232.174
+Bad permissions. Try removing permissions for user: UNKNOWN\\UNKNOWN (S-1-5-21-4153787616-4019674959-1063179218-1008) on file C:/Users/heng/.ssh/config.
+Bad owner or permissions on C:\\Users\\heng/.ssh/config
+
+C:\Users\heng>icacls C:\Users\heng\.ssh\config /remove "S-1-5-21-4153787616-4019674959-1063179218-1008"
+Successfully processed 0 files; Failed processing 0 files
+
+C:\Users\heng>icacls C:\Users\heng\.ssh\config
+C:\Users\heng\.ssh\config NT AUTHORITY\SYSTEM:(F)
+                          BUILTIN\Administrators:(F)
+                          LAPTOP-NI1B9H83\heng:(F)
+                          S-1-5-21-4153787616-4019674959-1063179218-1008:(F)
+
+Successfully processed 1 files; Failed processing 0 files
+
+C:\Users\heng>ssh yl7622@shell1.doc.ic.ac.uk
+Bad permissions. Try removing permissions for user: UNKNOWN\\UNKNOWN (S-1-5-21-4153787616-4019674959-1063179218-1008) on file C:/Users/heng/.ssh/config.
+Bad owner or permissions on C:\\Users\\heng/.ssh/config
+
+C:\Users\heng>ssh -v
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface] [-b bind_address]
+           [-c cipher_spec] [-D [bind_address:]port] [-E log_file]
+           [-e escape_char] [-F configfile] [-I pkcs11] [-i identity_file]
+           [-J destination] [-L address] [-l login_name] [-m mac_spec]
+           [-O ctl_cmd] [-o option] [-P tag] [-p port] [-Q query_option]
+           [-R address] [-S ctl_path] [-W host:port] [-w local_tun[:remote_tun]]
+           destination [command [argument ...]]
+
+C:\Users\heng>ssh -v yl7622@shell1.doc.ic.ac.uk
+OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
+Bad permissions. Try removing permissions for user: UNKNOWN\\UNKNOWN (S-1-5-21-4153787616-4019674959-1063179218-1008) on file C:/Users/heng/.ssh/config.
+Bad owner or permissions on C:\\Users\\heng/.ssh/config
+
+C:\Users\heng>ssh -v yl7622@shell1.doc.ic.ac.uk
+OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2
+debug1: Reading configuration data C:\\Users\\heng/.ssh/config
+debug1: Connecting to shell1.doc.ic.ac.uk [146.169.21.39] port 22.
+debug1: Connection established.
+debug1: identity file C:\\Users\\heng/.ssh/id_rsa type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_rsa-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ecdsa type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ecdsa-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ecdsa_sk type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ecdsa_sk-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ed25519 type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ed25519-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ed25519_sk type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_ed25519_sk-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_xmss type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_xmss-cert type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_dsa type -1
+debug1: identity file C:\\Users\\heng/.ssh/id_dsa-cert type -1
+debug1: Local version string SSH-2.0-OpenSSH_for_Windows_9.5
+debug1: Remote protocol version 2.0, remote software version OpenSSH_9.6p1 Ubuntu-3ubuntu13.5
+debug1: compat_banner: match: OpenSSH_9.6p1 Ubuntu-3ubuntu13.5 pat OpenSSH* compat 0x04000000
+debug1: Authenticating to shell1.doc.ic.ac.uk:22 as 'yl7622'
+debug1: load_hostkeys: fopen C:\\Users\\heng/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen __PROGRAMDATA__\\ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen __PROGRAMDATA__\\ssh/ssh_known_hosts2: No such file or directory
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: algorithm: curve25519-sha256
+debug1: kex: host key algorithm: ssh-ed25519
+debug1: kex: server->client cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: kex: client->server cipher: chacha20-poly1305@openssh.com MAC: <implicit> compression: none
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: SSH2_MSG_KEX_ECDH_REPLY received
+debug1: Server host key: ssh-ed25519 SHA256:bqtULMoVvIWe7dPmv0MjL9yqm/Z4tCPsQxUWAYFDmOo
+debug1: load_hostkeys: fopen C:\\Users\\heng/.ssh/known_hosts2: No such file or directory
+debug1: load_hostkeys: fopen __PROGRAMDATA__\\ssh/ssh_known_hosts: No such file or directory
+debug1: load_hostkeys: fopen __PROGRAMDATA__\\ssh/ssh_known_hosts2: No such file or directory
+debug1: Host 'shell1.doc.ic.ac.uk' is known and matches the ED25519 host key.
+debug1: Found key in C:\\Users\\heng/.ssh/known_hosts:14
+debug1: ssh_packet_send2_wrapped: resetting send seqnr 3
+debug1: rekey out after 134217728 blocks
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: ssh_packet_read_poll2: resetting read seqnr 3
+debug1: SSH2_MSG_NEWKEYS received
+debug1: rekey in after 134217728 blocks
+debug1: get_agent_identities: ssh_get_authentication_socket: No such file or directory
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_rsa
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_ecdsa
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_ecdsa_sk
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_ed25519
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_ed25519_sk
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_xmss
+debug1: Will attempt key: C:\\Users\\heng/.ssh/id_dsa
+debug1: SSH2_MSG_EXT_INFO received
+debug1: kex_input_ext_info: server-sig-algs=<ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256>
+debug1: kex_ext_info_check_ver: publickey-hostbound@openssh.com=<0>
+debug1: kex_ext_info_check_ver: ping@openssh.com=<0>
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+WARNING : Unauthorized access to this system is forbidden and will be
+prosecuted by law. By accessing this system, you agree that your actions
+may be monitored if unauthorized usage is suspected.
+
+Authorized usage must comply with the College Terms and Conditions of
+Use of IT Resources:
+
+https://www.imperial.ac.uk/admin-services/secretariat/college-governance/charters/policies-regulations-and-codes-of-practice/information-security-/policy/it-resources/
+
+     ***DO NOT RUN RESOURCE-INTENSIVE PROCESSES ON THIS SERVER***
+debug1: Authentications that can continue: publickey,gssapi-keyex,gssapi-with-mic,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_rsa
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_ecdsa
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_ecdsa_sk
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_ed25519
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_ed25519_sk
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_xmss
+debug1: Trying private key: C:\\Users\\heng/.ssh/id_dsa
+debug1: Next authentication method: password
