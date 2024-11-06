@@ -1,0 +1,47 @@
+PS C:\Users\heng> ssh yl7622@shell2.doc.ic.ac.uk
+WARNING : Unauthorized access to this system is forbidden and will be
+prosecuted by law. By accessing this system, you agree that your actions
+may be monitored if unauthorized usage is suspected.
+
+Authorized usage must comply with the College Terms and Conditions of
+Use of IT Resources:
+
+https://www.imperial.ac.uk/admin-services/secretariat/college-governance/charters/policies-regulations-and-codes-of-practice/information-security-/policy/it-resources/
+
+     ***DO NOT RUN RESOURCE-INTENSIVE PROCESSES ON THIS SERVER***
+yl7622@shell2.doc.ic.ac.uk's password: 
+Permission denied, please try again.
+yl7622@shell2.doc.ic.ac.uk's password: 
+Permission denied, please try again.
+yl7622@shell2.doc.ic.ac.uk's password: 
+Lab LEXIS Closures
+==================
+
+Please be aware of the following lab closure for LEXIS:
+
+Friday 8th November: ALL LABS
+1pm - 4pm: First-year Haskell Interim Test.
+All CURVE computers in HXLY 221 reserved 1pm - 4pm.
+
+Please plan your usage of the labs accordingly.
+
+Please see www.imperial.ac.uk/computing/csg for news on any known
+issues before e-mailing doc-help@imperial.ac.uk for assistance.
+=================================================================
+
+Linux 6.8.0-45-generic #45-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug 30 12:02:04 UTC 2024 x86_64
+yl7622@vm-shell2:~$ quota -Q
+Disk quotas for user yl7622 (uid 16569):                                       024 x86_64
+     Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+
+eagle.doc.ic.ac.uk.:/export/users/n/ng522
+                12999992* 12000000 13000000   6days   77048   90000   91000    
+yl7622@vm-shell2:~$
+yl7622@vm-shell2:~$ rm -rf .cache
+yl7622@vm-shell2:~$ quota -Q
+Disk quotas for user yl7622 (uid 16569):
+     Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+
+eagle.doc.ic.ac.uk.:/export/users/n/ng522
+                5930352  12000000 13000000           72872   90000   91000     
+yl7622@vm-shell2:~$
