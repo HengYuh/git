@@ -1,0 +1,24 @@
+hengyu@hengyu-virtual-machine:~$                                         rqt_graph
+hengyu@hengyu-virtual-machine:~$                                            rosnode
+rosnode is a command-line tool for printing information about ROS Nodes.
+
+Commands:
+	rosnode ping	test connectivity to node
+	rosnode list	list active nodes
+	rosnode info	print information about node
+	rosnode machine	list nodes running on a particular machine or list machines
+	rosnode kill	kill a running node
+	rosnode cleanup	purge registration information of unreachable nodes
+
+Type rosnode <command> -h for more detailed usage, e.g. 'rosnode ping -h'
+
+hengyu@hengyu-virtual-machine:~$                                         rosnode list
+/rosout
+/teleop_turtle
+/turtlesim
+hengyu@hengyu-virtual-machine:~$ rqt_graph
+hengyu@hengyu-virtual-machine:~$ rosnode info
+Usage: rosnode info [options] node1 [node2...]
+
+rosnode: error: You must specify at least one node name
+hengyu@hengyu-virtual-machine:~$                                   rosnode info/turtlesim
