@@ -1,0 +1,32 @@
+git 上传
+先git init
+再创建账号  git config --global user.name "HengYu"
+git config --global user.email "hengyu514@gmail.com"
+然后git add . 添加当前的文件
+ git remote add origin https://github.com/zifanwei/asr-code-switch.git
+git commit -m "Add new audio files to data/audio5"
+
+ git branch 查看本地分支
+### heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/asr-code-switch (main)
+$ git branch
+* main
+  master
+
+确保本地分支和网上分支匹配
+git branch -r
+### heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/asr-code-switch (main)
+$ git branch -r
+  origin/data/audio/yh
+  origin/main
+  origin/master
+
+切换分支 
+$ git checkout -b main
+
+
+如果查看不到远程分支，要先抓取
+ git fetch origin
+
+然后push即可 git push origin main
+注：大小不能超过100MB的文件
+
