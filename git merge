@@ -1,0 +1,77 @@
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹
+$ git init
+Initialized empty Git repository in D:/桌面/ICML/audio/新建文件夹/.git/
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git add .
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git commit -m 'addaudio'
+[master (root-commit) 007e6f1] addaudio
+ 1 file changed, 10511 insertions(+)
+ create mode 100644 short_audio.csv
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git remote set-url origin https://github.com/HengYuh/csv.git
+error: No such remote 'origin'
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git remote set-url main https://github.com/HengYuh/csv.git
+error: No such remote 'main'
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git remote add origin https://github.com/HengYuh/csv.git
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git remote -v
+origin  https://github.com/HengYuh/csv.git (fetch)
+origin  https://github.com/HengYuh/csv.git (push)
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git pull origin main
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 250.15 KiB | 2.84 MiB/s, done.
+From https://github.com/HengYuh/csv
+ * branch            main       -> FETCH_HEAD
+ * [new branch]      main       -> origin/main
+fatal: refusing to merge unrelated histories
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ ^C
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> master
+
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git pull origin main
+From https://github.com/HengYuh/csv
+ * branch            main       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ ^C
+
+heng@LAPTOP-NI1B9H83 MINGW64 /d/桌面/ICML/audio/新建文件夹 (master)
+$ git pull origin main --allow-unrelated-histories
+From https://github.com/HengYuh/csv
+ * branch            main       -> FETCH_HEAD
+Auto-merging short_audio.csv
+CONFLICT (add/add): Merge conflict in short_audio.csv
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+
+然后用vscode打开，手动选择即可
