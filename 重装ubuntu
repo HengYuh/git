@@ -1,0 +1,21 @@
+首先是装ROS，：
+wget http://fishros.com/install -O fishros && . fishros
+然后scode
+然后是clash for linux, refer to :https://www.mgodmonkey.cn/posts/a5d6f412.html
+. 安装 Clash
+
+    首先，下载 Clash.for.Windows-0.20.39-x64-linux.tar.gz【网速慢的用 gitee 进行下载：https://gitee.com/mgod_wu/clash-for-all-backup/releases/tag/v0.20.39】，下载完成后终端进入下载目录运行以下命令进行解压：
+
+tar zxvf Clash.for.Windows-0.20.39-x64-linux.tar.gz
+
+解压完成后，可以将文件夹改名并移到 /opt/：目录中：
+
+sudo mv Clash\ for\ Windows-0.20.39-x64-linux /opt/clash
+
+通过 sudo ls /opt/clash 查看目录内结构：
+
+cfw 就是 clash for windows 的意思，原作者把 gui 界面也移植到了 linux 中，我们可以运行以下命令打开：
+
+cd /opt/clash
+./cfw
+qq:参考：https://blog.csdn.net/weixin_44629973/article/details/102871352
